@@ -14,6 +14,7 @@ on:
   pull_request:
     branches: [ "master" ]
 
+
 jobs:
   build:
 
@@ -29,6 +30,11 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+      - run: |
+          gh issue --repo ${{ github.repository }} \
+            create --title "Issue title" --body "Issue body"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
