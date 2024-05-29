@@ -38,3 +38,4 @@ jobs:
       - name: Test MinFuns
         run: | 
               javac ./test/MaxTest.java
+              java ./test/MaxTest
