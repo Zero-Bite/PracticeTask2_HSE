@@ -34,7 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-        with:
-          name: test
+      - uses:actions/checkout@v4
+        - name: Test MinFuns
+          package: test
           path: /MaxTest.java
