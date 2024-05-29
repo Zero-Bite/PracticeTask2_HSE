@@ -35,5 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Test MinFuns
-        run: |
-            java.test.MaxTest
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test
+          path: /MaxTest.java
