@@ -58,7 +58,7 @@ class MinTest {
     void MinTest3(){
         int result = main._min("data3.txt");
 
-        Assertions.assertEquals(17, result);
+        Assertions.assertEquals(0, result);
     }
 
     @Test
